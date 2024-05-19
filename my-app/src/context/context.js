@@ -11,8 +11,8 @@ export const Provider = ({children}) => {
 
     //Action creators
     const deleteTransaction = (id) => dispatch({type:'DELETE_TRANSACTION',payload:id});
-    const addTransaction = (transaction) => dispatch({type: 'ADD_TRANSACTION',payload:transactions});
-    console.log(transactions);
+    const addTransaction = (transactions) => dispatch({type: 'ADD_TRANSACTION',payload:transactions});
+    
     
   return(
     <ExpenseTrackerContext.Provider value={{
@@ -20,8 +20,7 @@ export const Provider = ({children}) => {
       addTransaction,
       transactions
 
-    }}>
-        {children}
+    }}>{children}
     </ExpenseTrackerContext.Provider>
   )
 }
